@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\inc\error_parser.h" />
+    <ClInclude Include="..\..\inc\eSDKOBSS3.h" />
+    <ClInclude Include="..\..\inc\log.h" />
+    <ClInclude Include="..\..\inc\request.h" />
+    <ClInclude Include="..\..\inc\request_context.h" />
+    <ClInclude Include="..\..\inc\response_headers_handler.h" />
+    <ClInclude Include="..\..\inc\simplexml.h" />
+    <ClInclude Include="..\..\inc\string_buffer.h" />
+    <ClInclude Include="..\..\inc\util.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\acl.c" />
+    <ClCompile Include="..\..\src\bucket.c" />
+    <ClCompile Include="..\..\src\error_parser.c" />
+    <ClCompile Include="..\..\src\general.c" />
+    <ClCompile Include="..\..\src\log.c" />
+    <ClCompile Include="..\..\src\object.c" />
+    <ClCompile Include="..\..\src\request.c" />
+    <ClCompile Include="..\..\src\request_context.c" />
+    <ClCompile Include="..\..\src\response_headers_handler.c" />
+    <ClCompile Include="..\..\src\service.c" />
+    <ClCompile Include="..\..\src\service_access_logging.c" />
+    <ClCompile Include="..\..\src\simplexml.c" />
+    <ClCompile Include="..\..\src\util.c" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{AB9FFBA6-F5BF-4F12-8B33-A4D2F9975F32}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>obs</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(VCInstallDir)include;$(VCInstallDir)atlmfc\include;$(WindowsSdkDir)include;$(FrameworkSDKDir)\include;</IncludePath>
+    <LibraryPath>$(VCInstallDir)lib;$(VCInstallDir)atlmfc\lib;$(WindowsSdkDir)lib;$(FrameworkSDKDir)\lib</LibraryPath>
+    <ExcludePath>$(VCInstallDir)include;$(VCInstallDir)atlmfc\include;$(WindowsSdkDir)include;$(FrameworkSDKDir)\include;$(MSBuildToolsPath32);$(VCInstallDir)atlmfc\lib;$(VCInstallDir)lib;</ExcludePath>
+    <OutDir>$(SolutionDir)..\..\build\vc100\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)..\..\build\vc100\$(Configuration)\$(ProjectName)\</IntDir>
+    <TargetName>libeSDKOBSS3</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)..\..\build\vc100\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)..\..\build\vc100\$(Configuration)\$(ProjectName)\</IntDir>
+    <TargetName>libeSDKOBSS3</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;OBS_EXPORTS;_CRT_SECURE_NO_WARNINGS;HUAWEISECUREC_WXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..\..\third_party\build\openssl-1.0.2j\include;$(SolutionDir)..\..\..\third_party\build\curl-7.49.1\include;$(SolutionDir)..\..\inc;$(SolutionDir)..\..\inc\mingw;$(SolutionDir)..\..\..\third_party\build\libxml2-2.9.4\include;$(SolutionDir)..\..\..\third_party\build\pcre-8.39\include;$(SolutionDir)..\..\..\third_party\libxml2-2.9.4\os400\iconv;$(SolutionDir)..\..\..\self_dev\huaweisecurec\include;..\..\..\..\..\test\demo\eSDK_OBS_API_C++_Demo\getopt9\include</AdditionalIncludeDirectories>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <CallingConvention>Cdecl</CallingConvention>
+      <AdditionalOptions>/wd4430 %(AdditionalOptions)</AdditionalOptions>
+      <IgnoreStandardIncludePath>false</IgnoreStandardIncludePath>
+      <PrecompiledHeaderFile>StdAfx.h</PrecompiledHeaderFile>
+      <UndefinePreprocessorDefinitions>
+      </UndefinePreprocessorDefinitions>
+      <ForcedUsingFiles>
+      </ForcedUsingFiles>
+      <DisableSpecificWarnings>
+      </DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\..\..\third_party\build\curl-7.49.1\lib;$(SolutionDir)..\..\..\third_party\build\openssl-1.0.2j\lib;$(SolutionDir)..\..\..\self_dev\eSDK_LogAPI_V2.1.00\lib;$(SolutionDir)..\..\..\third_party\build\pcre-8.39\lib;$(SolutionDir)..\..\..\third_party\build\libssh2-1.7.0;$(WindowsSdkDir)\Lib;$(SolutionDir)..\..\..\third_party\build\libxml2-2.9.4\lib;$(SolutionDir)..\..\..\self_dev\huaweisecurec\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreAllDefaultLibraries>
+      </IgnoreAllDefaultLibraries>
+      <AdditionalDependencies>libcurl.lib;libeay32.lib;ssleay32.lib;eSDKLogAPI.lib;pcre.lib;libssh2.lib;libxml2.lib;WSock32.Lib;huaweisecurec.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ImageHasSafeExceptionHandlers>true</ImageHasSafeExceptionHandlers>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;OBS_EXPORTS;_CRT_SECURE_NO_WARNINGS;HUAWEISECUREC_WXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..\..\third_party\build\openssl-1.0.2j\include;$(SolutionDir)..\..\..\third_party\build\curl-7.49.1\include;$(SolutionDir)..\..\inc;$(SolutionDir)..\..\inc\mingw;$(SolutionDir)..\..\..\third_party\build\libxml2-2.9.4\include;$(SolutionDir)..\..\..\third_party\build\pcre-8.39\include;$(SolutionDir)..\..\..\third_party\libxml2-2.9.4\os400\iconv;$(SolutionDir)..\..\..\self_dev\huaweisecurec\include;..\..\..\..\..\test\demo\eSDK_OBS_API_C++_Demo\getopt9\include</AdditionalIncludeDirectories>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DisableSpecificWarnings>
+      </DisableSpecificWarnings>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <DisableLanguageExtensions>false</DisableLanguageExtensions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\..\..\third_party\build\curl-7.49.1\lib;$(SolutionDir)..\..\..\third_party\build\openssl-1.0.2j\lib;$(SolutionDir)..\..\..\self_dev\eSDK_LogAPI_V2.1.00\lib;$(SolutionDir)..\..\..\third_party\build\pcre-8.39\lib;$(SolutionDir)..\..\..\third_party\build\libssh2-1.7.0;$(WindowsSdkDir)\Lib;$(SolutionDir)..\..\..\third_party\build\libxml2-2.9.4\lib;$(SolutionDir)..\..\..\self_dev\huaweisecurec\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libcurl.lib;libeay32.lib;ssleay32.lib;eSDKLogAPI.lib;pcre.lib;libssh2.lib;libxml2.lib;WSock32.Lib;huaweisecurec.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ImageHasSafeExceptionHandlers>true</ImageHasSafeExceptionHandlers>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
